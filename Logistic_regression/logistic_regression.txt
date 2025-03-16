@@ -1,1 +1,25 @@
+Logistic Regression
+
+Can it have imbalanced data and what is the impact of having imbalanced data ?
+
+How to treat imbalanced data in Logistic regression
+
+What is the cost function used in Logistic Regression?
+
+What is entropy
+
+
+What are log-loss and log-odds
+
+
+What are Assumptions in Logistic regression
+
+
+How to validate Assumptions in Logistic Regression
+
+
+Cross validation technique in Logistic regression
+
+
+Confusion Matrix and Evaluation criteria
 
