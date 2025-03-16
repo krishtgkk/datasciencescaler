@@ -1,68 +1,68 @@
-1. What is Cross-Validation?
-Answer:
+1. What is Cross-Validation?  
+Answer:  
 Cross-validation is a resampling technique used to evaluate machine learning models by partitioning the dataset into multiple subsets. The model is trained on some subsets and validated on the remaining subset to assess its performance.
+________________________________________ 
+2. Why is Cross-Validation Important?  
+Answer:  
+Cross-validation helps:  
+•	Estimate the model's performance on unseen data.  
+•	Reduce overfitting by evaluating the model on multiple subsets of the data.  
+•	Provide a more robust evaluation compared to a single train-test split.  
+________________________________________  
+3. What are the Types of Cross-Validation?  
+Answer:  
+Common types include:   
+.	k-Fold Cross-Validation  
+.	Stratified k-Fold Cross-Validation  
+.	Leave-One-Out Cross-Validation (LOOCV)  
+.	Leave-P-Out Cross-Validation  
+.	Time Series Cross-Validation  
+________________________________________  
+4. Explain k-Fold Cross-Validation.  
+Answer:  
+In k-fold cross-validation:  
+•	The dataset is divided into k equal-sized folds.  
+•	The model is trained on k-1 folds and validated on the remaining fold.  
+•	This process is repeated k times, and the results are averaged to estimate performance.  
+________________________________________  
+5. What is Stratified k-Fold Cross-Validation? 
+Answer:  
+Stratified k-fold cross-validation ensures that each fold maintains the same proportion of classes as the original dataset. It is particularly useful for imbalanced datasets.  
 ________________________________________
-2. Why is Cross-Validation Important?
-Answer:
-Cross-validation helps:
-•	Estimate the model's performance on unseen data.
-•	Reduce overfitting by evaluating the model on multiple subsets of the data.
-•	Provide a more robust evaluation compared to a single train-test split.
+6. What is Leave-One-Out Cross-Validation (LOOCV)?  
+Answer:  
+LOOCV is a special case of k-fold cross-validation where k equals the number of samples. Each sample is used once as a validation set, and the model is trained on the remaining samples.  
+________________________________________  
+7. What is Leave-P-Out Cross-Validation?  
+Answer:  
+Leave-P-Out cross-validation involves leaving out p samples as the validation set and training the model on the remaining samples. This process is repeated for all possible combinations of p samples.  
+________________________________________  
+8. What is Time Series Cross-Validation?  
+Answer:  
+Time series cross-validation is used for time-dependent data. It ensures that the training set only includes data before the validation set to avoid data leakage.  
+________________________________________  
+9. What is the Difference Between k-Fold and LOOCV?  
+Answer:  
+•	k-Fold: Divides the data into k folds and uses one fold for validation at a time.  
+•	LOOCV: Uses each sample as a validation set once. LOOCV is computationally expensive but provides a low-bias estimate.  
+________________________________________  
+10. What is the Advantage of k-Fold Over a Single Train-Test Split?  
+Answer:  
+k-Fold provides a more robust estimate of model performance by averaging results over multiple splits, reducing the variance compared to a single train-test split.  
 ________________________________________
-3. What are the Types of Cross-Validation?
-Answer:
-Common types include:
-1.	k-Fold Cross-Validation
-2.	Stratified k-Fold Cross-Validation
-3.	Leave-One-Out Cross-Validation (LOOCV)
-4.	Leave-P-Out Cross-Validation
-5.	Time Series Cross-Validation
-________________________________________
-4. Explain k-Fold Cross-Validation.
-Answer:
-In k-fold cross-validation:
-•	The dataset is divided into k equal-sized folds.
-•	The model is trained on k-1 folds and validated on the remaining fold.
-•	This process is repeated k times, and the results are averaged to estimate performance.
-________________________________________
-5. What is Stratified k-Fold Cross-Validation?
-Answer:
-Stratified k-fold cross-validation ensures that each fold maintains the same proportion of classes as the original dataset. It is particularly useful for imbalanced datasets.
-________________________________________
-6. What is Leave-One-Out Cross-Validation (LOOCV)?
-Answer:
-LOOCV is a special case of k-fold cross-validation where k equals the number of samples. Each sample is used once as a validation set, and the model is trained on the remaining samples.
-________________________________________
-7. What is Leave-P-Out Cross-Validation?
-Answer:
-Leave-P-Out cross-validation involves leaving out p samples as the validation set and training the model on the remaining samples. This process is repeated for all possible combinations of p samples.
-________________________________________
-8. What is Time Series Cross-Validation?
-Answer:
-Time series cross-validation is used for time-dependent data. It ensures that the training set only includes data before the validation set to avoid data leakage.
-________________________________________
-9. What is the Difference Between k-Fold and LOOCV?
-Answer:
-•	k-Fold: Divides the data into k folds and uses one fold for validation at a time.
-•	LOOCV: Uses each sample as a validation set once. LOOCV is computationally expensive but provides a low-bias estimate.
-________________________________________
-10. What is the Advantage of k-Fold Over a Single Train-Test Split?
-Answer:
-k-Fold provides a more robust estimate of model performance by averaging results over multiple splits, reducing the variance compared to a single train-test split.
-________________________________________
-11. What is the Disadvantage of k-Fold Cross-Validation?
-Answer:
-k-Fold can be computationally expensive, especially for large datasets or complex models.
-________________________________________
-12. How Do You Choose the Value of k in k-Fold Cross-Validation?
-Answer:
-Common choices are k=5 or k=10. A smaller k is faster but may have higher variance, while a larger k is more computationally expensive but provides a more robust estimate.
-________________________________________
-13. What is Nested Cross-Validation?
-Answer:
-Nested cross-validation involves two layers of cross-validation:
-•	Outer loop: Evaluates model performance.
-•	Inner loop: Tunes hyperparameters.
+11. What is the Disadvantage of k-Fold Cross-Validation?  
+Answer:  
+k-Fold can be computationally expensive, especially for large datasets or complex models.  
+________________________________________  
+12. How Do You Choose the Value of k in k-Fold Cross-Validation?  
+Answer:  
+Common choices are k=5 or k=10. A smaller k is faster but may have higher variance, while a larger k is more computationally expensive but provides a more robust estimate.  
+________________________________________ 
+13. What is Nested Cross-Validation?  
+Answer:  
+Nested cross-validation involves two layers of cross-validation:  
+•	Outer loop: Evaluates model performance.  
+•	Inner loop: Tunes hyperparameters.  
 ________________________________________
 14. Why is Stratified k-Fold Used for Classification Problems?
 Answer:
