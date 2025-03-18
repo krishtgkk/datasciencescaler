@@ -82,4 +82,50 @@ influence = model.get_influence()
 cooks_distance = influence.cooks_distance[0]
 plt.stem(np.arange(len(cooks_distance)), cooks_distance, markerfmt=",")
 plt.title("Cook's Distance")
+
+
+
+# Calculate R2-square and Adjusted R2-Square for a different example
+
+import numpy as np
+import pandas as pd
+from sklearn.linear_model import LinearRegression
+from sklearn.metrics import r2_score
+
+# Sample data
+# Let's create a simple dataset with one feature and a target variable
+np.random.seed(42)
+X = 2 * np.random.rand(100, 1)
+y = 4 + 3 * X + np.random.randn(100, 1)
+
+# Convert to DataFrame for better visualization (optional)
+data = pd.DataFrame(np.hstack([X, y]), columns=['Feature', 'Target'])
+print(data.head())
+
+# Split the data into feature (X) and target (y)
+X = data[['Feature']]
+y = data['Target']
+
+# Create and fit the linear regression model
+model = LinearRegression()
+model.fit(X, y)
+
+# Make predictions
+y_pred = model.predict(X)
+
+# Calculate R-squared
+r2 = r2_score(y, y_pred)
+
+# Calculate Adjusted R-squared
+n = X.shape[0]  # Number of observations
+p = X.shape[1]  # Number of features
+adjusted_r2 = 1 - (1 - r2) * (n - 1) / (n - p - 1)
+
+# Output the results
+print(f"R-squared: {r2:.4f}")
+print(f"Adjusted R-squared: {adjusted_r2:.4f}")
+
+# Coefficients and intercept
+print(f"Coefficient: {model.coef_[0]:.4f}")
+print(f"Intercept: {model.intercept_:.4f}")
 plt.show()
